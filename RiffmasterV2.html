@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Website - Juan Antonio Solis Vargas</title>
+    <style>
+        body {
+            background-color: #003831;
+            margin: 0;
+            color: gold;
+            font-family: Calibri, sans-serif;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .header-container {
+            display: flex;
+            align-items: center;
+            padding: 10px;
+        }
+
+        img.logo {
+            width: auto;
+            height: 100px;
+            margin-right: 700px;
+        }
+
+        .content-box {
+            color: gold;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-size: 20px;
+            margin: 20px;
+            padding: 20px;
+            border: 3px solid gold;
+            border-radius: 10px;
+            background-color: #004C44;
+            font-family: 'Courier New', monospace;
+            min-height: 200px;
+            width: 60%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .content-box.home {
+            border: none;
+            background-color: transparent;
+            padding: 0;
+        }
+
+        hr {
+            margin: 10px 0;
+            border: none;
+            height: 3px;
+            background-color: gold;
+        }
+
+        .header {
+            display: flex;
+            align-items: center;
+            color: green;
+            font-size: 20px;
+            margin: 0;
+        }
+
+        .header span {
+            color: green;
+            font-size: 20px;
+            margin-right: 20px;
+        }
+
+        .header a {
+            color: green;
+            text-decoration: underline;
+            font-weight: normal;
+            cursor: pointer;
+        }
+
+        .header a:visited {
+            color: green;
+        }
+
+        .center-img img {
+            width: 350px;
+            height: 350px;
+            border: 5px solid gold;
+            border-radius: 10px;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header-container">
+        <img src="https://ucm.calpoly.edu/sites/ucm.calpoly.edu/files/styles/width_670px/public/2022-11/logo-athletics-full-670-171.png?itok=i7T0mDhv"
+             alt="Cal Poly Athletics Logo"
+             class="logo">
+
+        <div class="header">
+            <span><a onclick="loadContent('home')">Home</a></span>
+            <span><a onclick="loadContent('about')">About</a></span>
+            <span><a onclick="loadContent('projects')">Projects</a></span>
+            <span><a onclick="loadContent('portfolio')">Portfolio</a></span>
+        </div>
+    </div>
+
+    <hr width="100%" size="3" color="gold" noshade>
+
+    <div class="content-box home" id="content-box">
+        <div class="center-img">
+            <img src="https://media.licdn.com/dms/image/v2/D5603AQGAI5UwfC84EQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1726164300507?e=1733356800&v=beta&t=jty3RFvzHv7Jtuoelw6XkB4M-Tg9q7rtLJvKV_0iJck" alt="Centered Image">
+        </div>
+        <h1>Juan Antonio Solis Vargas</h1>
+        <p>Hey, my name is Juan and I'm a second-year computer science major. Some hobbies of mine outside of school are playing guitar, boxing, and video games.</p>
+    </div>
+
+
+    <script>
+        function loadContent(page) {
+            const contentBox = document.getElementById('content-box');
+
+            if (page === 'home') {
+                contentBox.classList.add('home');
+                contentBox.innerHTML = `
+                    <div class="center-img">
+                        <img src="https://media.licdn.com/dms/image/v2/D5603AQGAI5UwfC84EQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1726164300507?e=1733356800&v=beta&t=jty3RFvzHv7Jtuoelw6XkB4M-Tg9q7rtLJvKV_0iJck" alt="Centered Image">
+                    </div>
+                    <h1>Juan Antonio Solis Vargas</h1>
+                    <p>Hey, my name is Juan and I'm a second-year computer science major. Some hobbies of mine outside of school are playing guitar, boxing, and video games.</p>
+                `;
+            } else if (page === 'about') {
+                contentBox.classList.remove('home');
+                contentBox.innerHTML = `
+                    <h1>About Me</h1>
+                    <p>My name is Juan Solis, and I grew up in Soledad, CA. My passion for computer science began with my exposure to the agricultural industry. I aim to combine programming and technology to create innovative solutions that will make agriculture more efficient and affordable, benefiting the world.<p>                `;
+            } else if (page === 'projects') {
+                contentBox.classList.remove('home');
+                contentBox.innerHTML = `
+                    <h1>Projects</h1>
+                    <ul>
+                        <li>Project 1: Example 1</li>
+                        <li>Project 2: Example 2</li>
+                        <li>Project 3: Example 3</li>
+                    </ul>
+                `;
+            } else if (page === 'portfolio') {
+                contentBox.classList.remove('home');
+                contentBox.innerHTML = `
+                    <h1>Portfolio</h1>
+                    <p>Here are some of the projects and work I've done over the past year:</p>
+                    <ul>
+                        <li>Example 1</li>
+                        <li>Example 2</li>
+                        <li>Example 3</li>
+                    </ul>
+                `;
+            }
+        }
+    </script>
+
+</body>
+</html>
